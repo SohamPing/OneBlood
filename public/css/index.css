@@ -1,3 +1,7 @@
+/* blue : #222730
+   red: #ee2d24;
+*/
+
 html{
     overflow-x: hidden;
     
@@ -14,53 +18,4 @@ html{
     width: 100%;
     background-color: white;
 }
-.navbar{
-    border-radius: 0px;
-    margin: 0px;
-    background-color: #222730;
-}
-.main-logo{
-    width: 5%;   
-}
-.title-blood{
-    font-family: 'Montserrat', sans-serif;
-    display: inline;
-    color: #ee2d24;
-}
-.title-one{
-    font-family: 'Montserrat', sans-serif;
-    display: inline;
-    color: white;
-}
-.logodiv{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
-}
-.bloodimagediv{
-    margin: 0px;
-    height: 50vh;
-    background: linear-gradient(180deg, rgba(34,39,48,1) 0%, rgba(247,127,75,1) 50%);
-   
-}
-.blood-img{
-    border-radius: 2px;
-    outline: solid #f77f4b 1px;
-    border: #f77f4b 3px solid;
-    width: 100%;
-    height: 60vh;    
-}
-.tagline-one{
-    display: inline;
-    color: white;
-}
-.tagline-two{
-    display: inline;
-    color: white;
-}
-/* .slightlybottomdiv{
-    z-index: 9;
-    height: 5vh;
-    opacity: 0.1;
-    background-color: #ff5722;
-} */
+    

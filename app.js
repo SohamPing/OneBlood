@@ -23,19 +23,15 @@ app.use(express.static("public"));
 
 app.get('/',function(req,res){
     
-    const snapshot = db.collection('test2').get()
-    .then(snapshot=>{
-        snapshot.docs.forEach(elem=>{
+    // const snapshot = db.collection('test2').get()
+    // .then(snapshot=>{
+    //     snapshot.docs.forEach(elem=>{
             
-            if(elem.data().City=='Pune'){
-                console.log("IN Pune BllodBanks:- "+ elem.data().Name)
-            }
-           
-
-        
-
-        })
-    });
+    //         if(elem.data().City=='Pune'){
+    //             console.log("IN Pune BllodBanks:- "+ elem.data().Name)
+    //         }
+    //     })
+   // });
   
     res.render("index")
 
@@ -75,7 +71,7 @@ app.route('/')
                     BBCity : city,
                     Message: "I want to break free"
                 }) 
-                .then(()=>{
+                .then(function(){
                     console.log('Zala re!!')
 
                 })

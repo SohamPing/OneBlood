@@ -10,12 +10,100 @@ html{
     margin: 0px;
     padding: 0px;
 }.body{
-    
-   
+    background-color: #222730;
     margin: 0px;
     padding: 0px;
     height: 100%;
     width: 100%;
-    background-color: white;
-}
     
+}
+@media only screen and (max-width: 1200px) {
+    .logo-image{
+        visibility: hidden;
+    }
+  }
+.container{
+    
+    width: 100%;
+    background-color: #e94560;
+    height: 15vh;
+    margin-top: auto;
+    
+} 
+.white{
+    color: white;
+    margin-top: 5vh;
+    font-size: 120%;
+}
+.navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 250%;
+}
+.logo-image{
+    width: 50vh;
+    margin-top: 10vh;
+}
+.inside-box{
+    background-color: #e94560;
+    width: 85vh;
+    height: 60vh;
+    margin: 10vh 20vh;
+    border-radius: 2vh;
+    box-shadow: 5px 8px #888888;
+}
+span{
+    
+    padding: 5vh;
+}
+.logos{
+    padding-top: 4vh;
+    width: 60%;
+}
+h2{
+    color: #222730;
+    padding-top: 2vh;
+    text-align: center;
+    font-size: 300%;
+    font-weight: 600;
+    font-family:'Montserrat', sans-serif;
+}
+h3{
+    color: white;
+    padding-top: 2vh;
+    text-align: center;
+    font-size: 250%;
+    font-weight: 600;
+    font-family:'Montserrat', sans-serif;
+}
+
+h3:hover{
+    color: #222730;
+    cursor: pointer;
+}
+.h3button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.modal-title{
+    font-size: 200%;
+}
+.forminput{
+    margin: 2vh;
+
+}
+.bblist-container{
+    margin-left: 40vh;
+    background-color: thistle;
+    border-radius: 3vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 60%;
+    padding: 0vh 4vh 4vh 4vh;
+
+}
+.bbcomponentdiv{
+    border: 1px solid black;
+   border-radius: 3vh;
+   margin: 2vh 2vh 2vh 2vh
+}

@@ -9,6 +9,7 @@
 <script src="jquery-3.5.1.min.js"></script>
 
 
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -21,45 +22,152 @@
 <!--FONTSS-->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<body style="background-color: #222730;" >
+    <div class="container " >
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
- <div class="row" >
-    <div style="text-align: center; margin-left: auto; " class="col-lg-12" >
-
-       
-
         
+        <a class="navbar-brand white " href="#">OneBlood</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a class="white" href="/">Home</a></li>
+          <li  ><a class="white" href="#about">About</a></li>
+          <li  ><a class="white" href="#contact" class="navbar-nav pull-right">Contact</a></li>
+        </ul>
+      </div>
     </div>
- </div>
-
-
+  
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="inside-box" >
+          <div>
+            <h2>
+              What are you?
+            </h2>
+          </div>
+          <div class="row" style="text-align: center;" >
+            <div class="col-md-6 div-buttton">
+              <img class="logos" src="/images/bloodman.png" alt="">
+              <button class="h3button" data-toggle="modal" data-target="#exampleModalCenterRequester"><h3>Requester</h3></button>
+            </div>
+            <div class="col-md-6 div-buttton ">
+              <img class="logos" src="/images/injection.png" alt="">
+              <button class="h3button" data-toggle="modal" data-target="#exampleModalCenterDonor" ><h3>Donor</h3></button> 
+            </div>
+          </div>
+        </div>
+        <!-- Requester Modal -->
+<div class="modal fade" id="exampleModalCenterRequester" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Requestor Form</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <form action="/requester" method="POST">
+            <div class="requesterForm">
+              <div class="form-components" >
+                <label class="formlabel" >Name</label>
+                <input class="forminput" type="text" name="rname" placeholder="Name" autocomplete="off"> 
+              </div>
+              <div class="form-components" >
+                <label class="formlabel">Age</label>
+                <input class="forminput" type="number" name="rage" placeholder="age" autocomplete="off"> 
+              </div>
+              <div class="form-components" >
+                <label class="formlabel" >City</label>
+                <select class="forminput" name="rcity" id="city">
+                  <option value="Pune">Pune</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Nagpur">Nagpur</option>
+                  <option value="Jupiter">Jupiter</option>
+                </select>
+              </div>
+              <div class="form-components" >
+                <label class="formlabel" >Email</label>
+                <input class="forminput" type="text" name="remail" placeholder="Email" autocomplete="off"> 
+              </div>
+              <div style="text-align: center;" class="form-components" >
+                <button style="width: 25%;" class="btn btn-lg btn-danger" type="submit">Submit</button>
+              </div>
+               </div>
+          </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Donor Modal -->
+<div class="modal fade" id="exampleModalCenterDonor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Donor Form</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/donor" method="POST">
+          <div class="requesterForm">
+            <div class="form-components" >
+              <label class="formlabel" >Name</label>
+              <input class="forminput" type="text" name="dname" placeholder="Name" autocomplete="off"> 
+            </div>
+            <div class="form-components" >
+              <label class="formlabel">Age</label>
+              <input class="forminput" type="number" name="dage" placeholder="age" autocomplete="off"> 
+            </div>
+            
+            <div class="form-components" >
+              <label class="formlabel" >Email</label>
+              <input class="forminput" type="text" name="demail" placeholder="Email" autocomplete="off"> 
+            </div>
+            <div style="text-align: center;" class="form-components" >
+              <button style="width: 25%;" class="btn btn-lg btn-danger" type="submit">Submit</button>
+            </div>
+             </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="col-lg-4">
+        <img class="logo-image" src="/images/logo.jpg" alt="" srcset="">
+      </div>
+    </div>
   
 
 

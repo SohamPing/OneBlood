@@ -22,42 +22,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-//app.get('/',function(req,res){
-    
-//     const snapshot = db.collection('test2').get()
-//     .then(snapshot=>{
-//         snapshot.docs.forEach(elem=>{
-            
-//             if(elem.data().City=='Pune'){
-//                 console.log("IN Pune BllodBanks:- "+ elem.data().Name)
-//             }
-//         })
-//    });
-  
-    //res.render("index")
-
-//});
-// app.post('/',function(req,res){
-//     var a = req.body.firstname;
-//     var b = req.body.city;
-//     console.log(a+' '+b);
-
-//     var ref = db.collection('test2').doc('2');
-
-//     ref.set({
-//         Donor_Name : a,
-//         Donor_City : b,
-//         Message : 'I want to break free'
-//     })
-//     .then(function(){
-//         console.log("Zala re");
-//     })
-//     .catch(function(err){
-//         console.log("ERROR IS :- " + err);
-//     })
-//     res.redirect('/')
-// });
-
 app.route('/')
             .get(function(req,res){
                 res.render("index")
@@ -90,22 +54,23 @@ app.route('/requesterbblist')
                     .then(snapshot=>{
                         snapshot.docs.forEach(elem=>{
                             
-                            if(elem.data().city=='Pune'){
+                            if(elem.data().city==rcity){
                                 i++;
                                 var currName= elem.data().Name;
                                 var currNo= elem.data().number;
                                 var currAdd= elem.data().Address;
-                               // console.log(currName)
+            
                                 bbnamearray.push(currName);
                                 bbnoarray.push(currNo);
                                 bbaddarray.push(currAdd);
-                                // console.log("IN Pune BllodBanks:- "+ elem.data().Name+' '+i)
+                               
                                 
                             }
                         })
                         console.log(" "+bbnamearray);
                         console.log(" "+bbnoarray);
                         console.log(" "+bbaddarray);
+                        
                         res.render('rbblist',{
                             i:i,
                             BBnamearray : bbnamearray,
@@ -116,16 +81,38 @@ app.route('/requesterbblist')
                 }); 
  });
 
+ app.route('/donorlist')
+    .get(function(req,res){
+        var i = 0;
+        var donorlist =[];
+        const snapshot = db.collection('Donors').get()
+        .then(snapshot=>{
+            snapshot.docs.forEach(elem=>{
+                var currData= elem.data();
+                donorlist.push(currData);
+                i++;
+                
+            });
+            console.log(donorlist);
+            res.render('donorlist',{
+                i:i,
+                DonorArray:donorlist
+            })
+
+    });
+});
  app.post('/donor',function(req,res){
      var dname = req.body.dname;
      var dage = req.body.dage;
      var demail = req.body.demail;
+     var dbgroup = req.body.dbgroup;
      var ref = db.collection('Donors').doc(dname);
 
      ref.set({
          Name : dname,
          Age : dage,
-         Email : demail
+         Email : demail,
+         BloodGroup : dbgroup   
      })
      .then(function(){
 

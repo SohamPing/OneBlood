@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" initial-scale=1.0">
+    <title>One Blood</title>
+    <link rel="icon" href="/images/logo.ico" type="image/icon type">
+
+<script src="jquery-3.5.1.min.js"></script>
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!--FONTSS-->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="/css/index.css">
+</head>
+<body style="background-color: #222730;" >
+    <div class="container " >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand white " href="#">OneBlood</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a class="white" href="/">Home</a></li>
+            <li  ><a class="white" href="#about">About</a></li>
+            <li  ><a class="white" href="#contact" class="navbar-nav pull-right">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="font-size: 220%;">Donor List</h2>
+     
+      <div class="bblist-container">
+        <h2 style="font-size: 210%;">
+            Donor List
+           
+            <%for(var j=0;j<i;j++){%>
+                <% var name = DonorArray[j].Name%>
+              <div class="bbcomponentdiv">
+                <h4  >Name:- <%=DonorArray[j].Name%></h4>
+                <h4>Age:- <%=DonorArray[j].Age%></h4>
+                <h4>BloodGroup:- <%=DonorArray[j].BloodGroup%></h4>
+                <button   style="margin: 0.5rem" class="editbutton btn btn-md btn-danger">Edit</button>
+                <button id="<%=DonorArray[j].Name%>" onclick="deletefun(this.id)" style="margin: 0.5rem" class="editbutton btn btn-md btn-danger">Delete</button>
+               </div>
+
+            <%}%>
+        </h2>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js">
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+
+</script>
+ 
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+ <script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+ <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+ <script src="/__/firebase/init.js"></script>
+
+    <script src="js/donor.js"></script>
+ </body>
+ </html>
+
+ 
+    

@@ -49,8 +49,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a class="white" href="/">Home</a></li>
-            <li  ><a class="white" href="#about">About</a></li>
-            <li  ><a class="white" href="#contact" class="navbar-nav pull-right">Contact</a></li>
+            <li  ><a class="white" href="/donorlist" class="navbar-nav pull-right">Donor List</a></li>
           </ul>
         </div>
       </div>
@@ -67,12 +66,65 @@
                 <h4  >Name:- <%=DonorArray[j].Name%></h4>
                 <h4>Age:- <%=DonorArray[j].Age%></h4>
                 <h4>BloodGroup:- <%=DonorArray[j].BloodGroup%></h4>
-                <button   style="margin: 0.5rem" class="editbutton btn btn-md btn-danger">Edit</button>
+              <button class="btn btn-md btn-danger" data-toggle="modal" data-target="#exampleModalCenterDonor1">Edit</button>
                 <button id="<%=DonorArray[j].Name%>" onclick="deletefun(this.id)" style="margin: 0.5rem" class="editbutton btn btn-md btn-danger">Delete</button>
                </div>
 
             <%}%>
         </h2>
+
+        <div class="modal fade" id="exampleModalCenterDonor1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLongTitle">Donor Form</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="/donoredit" method="POST">
+                  <div class="requesterForm">
+                    <div class="form-components" >
+                      <label class="formlabel" >Name</label>
+                      <input class="forminput" type="text" name="dname" placeholder="Name" autocomplete="off"> 
+                    </div>
+                    <div class="form-components" >
+                      <label class="formlabel">Age</label>
+                      <input class="forminput" type="number" name="dage" placeholder="age" autocomplete="off"> 
+                    </div>
+                    
+                    <div class="form-components" >
+                      <label class="formlabel" >Email</label>
+                      <input class="forminput" type="text" name="demail" placeholder="Email" autocomplete="off"> 
+                    </div>
+                    <div class="form-components" >
+                      <label class="formlabel" >BloodGroup</label>
+                      <select class="forminput" name="dbgroup" id="dbgroup">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>      
+                      </select>
+                    </div>
+                    <div style="text-align: center;" class="form-components" >
+                      <button style="width: 25%;" class="btn btn-lg btn-danger" type="submit">Submit</button>
+                    </div>
+                    
+                     </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>

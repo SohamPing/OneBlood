@@ -92,8 +92,7 @@ app.route('/requesterbblist')
                 donorlist.push(currData);
                 i++;
                 
-            });
-            console.log(donorlist);
+            }); 
             res.render('donorlist',{
                 i:i,
                 DonorArray:donorlist
@@ -101,6 +100,42 @@ app.route('/requesterbblist')
 
     });
 });
+
+app.get('/DeleteDonor/:name',function(req,res){
+    var Name = req.params.name;
+
+    console.log("POST REQUEST MADE THE NAME "+ Name);
+    const ref = db.collection('Donors').doc(Name).delete()
+    .then(function(){
+
+          res.write('<script>window.alert("Document Deleted!" );window.location="/donorlist";</script>');
+          res.redirect('/donorlist')
+    });
+});
+
+ app.post('/donoredit',function(req,res){
+    var dname = req.body.dname;
+     var dage = req.body.dage;
+     var demail = req.body.demail;
+     var dbgroup = req.body.dbgroup;
+     var ref = db.collection('Donors').doc(dname);
+
+     ref.set({
+         Name : dname,
+         Age : dage,
+         Email : demail,
+         BloodGroup : dbgroup   
+     })
+     .then(function(){
+
+        res.write('<script>window.alert("Changes made in the Document" );window.location="/donorlist";</script>');
+          res.redirect('/donorlist')
+     })
+        .catch(function(err){
+           console.log("ERROR IS :- " + err);
+     })
+ });
+
  app.post('/donor',function(req,res){
      var dname = req.body.dname;
      var dage = req.body.dage;

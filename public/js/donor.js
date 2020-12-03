@@ -15,23 +15,15 @@
 //   };
   
       function deletefun(name){
-
-        firebase.initializeApp({
-            apiKey: 'AIzaSyChl5P81AbqjAu3ePUeO4fdOeB_Qfvxmms',
-            authDomain: 'dbmsproject-ass.firebaseapp.com',
-            projectId: 'dbmsproject-ass'
-          });
-          var db = firebase.firestore();
         
         console.log(name);
-        window.location('/')
-        db.collection("Donors").doc(name).delete().then(function() {
-            console.log("Document successfully deleted!");
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
+        console.log('till here');
+        location.replace('/DeleteDonor/'+name);
+ }
 
-      }
+
+       
+  
   
       
 
